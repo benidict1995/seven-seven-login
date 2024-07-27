@@ -75,6 +75,7 @@ class SignInFragment : BaseFragment<FragmentSigninBinding>(
     }
 
     private fun navigateToHome() {
+
         findNavController().navigate(
             R.id.homeFragment,
             null,
@@ -84,5 +85,10 @@ class SignInFragment : BaseFragment<FragmentSigninBinding>(
                     true
                 ).build()
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.checkIfUserLoggedIn()
     }
 }

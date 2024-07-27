@@ -23,6 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         binding.toolbar.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.menu_logout -> {
+                    viewModel.logout()
                     findNavController().navigate(
                         R.id.signInFragment,
                         null,
