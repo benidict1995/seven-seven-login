@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.benidict.data"
+    namespace = "com.benidict.network"
     compileSdk = 34
 
     defaultConfig {
@@ -36,10 +36,9 @@ android {
 
 dependencies {
     implementation(project(":domain"))
-    implementation(project(":persistence"))
-    implementation(project(":network"))
 
     kapt(libs.dagger.hilt.compiler)
+    implementation(libs.code.gson)
     implementation(libs.dagger.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

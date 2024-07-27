@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.dagger.hilt.android)
     id("kotlin-kapt")
 }
 
@@ -34,12 +35,17 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":persistence"))
+    implementation(project(":network"))
 
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
