@@ -21,5 +21,4 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
             insets
         }
     }
-
 }

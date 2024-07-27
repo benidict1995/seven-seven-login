@@ -1,6 +1,5 @@
 package com.benidict.a77_login.feature.signin
 
-import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -13,7 +12,6 @@ import com.benidict.a77_login.databinding.FragmentSigninBinding
 import com.benidict.a77_login.ext.textChanged
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.launchIn
@@ -30,7 +28,6 @@ class SignInFragment : BaseFragment<FragmentSigninBinding>(
 
     override fun onSetUpView() {
         super.onSetUpView()
-
         binding.inputUserName.textChanged()
             .onEach {
                 viewModel.userNameState.value = it.toString()
